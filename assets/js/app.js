@@ -12,7 +12,7 @@ var app = new Vue({
 	methods: {
 		loadApp: function () {
 			this.fetchDictionary(function () {
-				this.generatePassphrase();
+				app.generatePassphrase();
 			});
 		},
 		fetchDictionary: function (callback) {

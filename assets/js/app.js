@@ -26,9 +26,9 @@ var app = new Vue({
 			passphraseWords = [];
 			for (i=0; i < this.passphraseSettings.length; i++)
 			{
-				passphraseWords.push(dictionary[Math.floor(Math.random()*dictionary.length)]);
+				passphraseWords.push(this.dictionary[Math.floor(Math.random()*this.dictionary.length)]);
 			}
-			passphrase = passphraseWords.join(this.passphraseSettings.seperator);
+			this.passphrase = passphraseWords.join(this.passphraseSettings.seperator);
 		}
 	}
 });

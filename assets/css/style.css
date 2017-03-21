@@ -1,0 +1,153 @@
+::selection {
+    background-color: pink;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin:0;
+    padding:0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background: #2D3F51;
+    color: #fff;
+    display: table;
+}
+
+.content {
+    text-align: center;
+    display: inline-block;
+}
+
+.container {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    position:relative; 
+    margin:0 auto;
+
+}
+
+.hedding {
+    font-weight: 300;
+    font-size: 45px;
+    text-align: center;
+}
+
+.passphrase {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 30px;
+    font-weight: 300;
+    padding: 5px;
+    width: 900px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border-radius: 5px;
+    background: #34495e;
+}
+
+.form {
+    width: 50%;
+    margin: 30px auto;
+}
+
+.form-element {
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+button {
+    color: #fff;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: 'Open Sans', arial, sans-serif;
+    line-height: 24px;
+    border-radius: 0px;
+    border: none;
+    padding: 12px 24px;
+    background-color: #d9534f;
+}
+
+button:focus {
+    outline: none;
+}
+
+
+
+.wrapper-dropdown-2 {
+    /* Size and position */
+    position: relative; /* Enable absolute positioning for children and pseudo elements */
+    width: 200px;
+    height: 48px;
+    /*margin: 0 auto;*/
+    padding: 14px 15px;
+
+    /* Styles */
+    background: #fff;
+    color: #000;
+    border-left: 5px solid #d9534f;
+    cursor: pointer;
+    outline: none;
+}
+
+.wrapper-dropdown-2:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    margin-top: -3px;
+    border-width: 6px 6px 0 6px;
+    border-style: solid;
+    border-color: grey transparent;
+}
+
+.wrapper-dropdown-2 .dropdown {
+    /* Size & position */
+    position: absolute;
+    top: 100%;
+    left: -5px;
+    right: 0px;
+
+    /* Styles */
+    background: white;
+    transition: all 0.3s ease-out;
+    list-style: none;
+    -webkit-padding-start: 0px;
+    -webkit-margin-before: 0px;
+    border-left: 5px solid #d9534f;
+
+    /* Hiding */
+    opacity: 0;
+    pointer-events: none;
+}
+
+.wrapper-dropdown-2 .dropdown li {
+    display: none;
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    transition: all 0.3s ease-out;
+}
+
+
+/* Hover state */
+.wrapper-dropdown-2.active:after {
+    border-width: 0 6px 6px 6px;
+}
+
+.wrapper-dropdown-2.active .dropdown {
+    opacity: 1;
+    pointer-events: auto;
+}

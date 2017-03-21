@@ -7,23 +7,19 @@
         <link href="assets/css/style.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <div class="container">
+        <div class="container" id="app">
             <div class="content">
 
                 <h1 class="hedding">Passphrases:</h1>
                 <div class="passphrases">
-                    @foreach($passphrases as $passphrase)
-                        <div class="passphrase" onclick="selectText(this)">{{ $passphrase }}</div>
-                    @endforeach
+                    <div class="passphrase">{{ passphrase }}</div>
                 </div>
                 <div class="form">
                     <div class="form-element">
                         <div id="dd" class="wrapper-dropdown-2">
                             <span>Number</span>
                             <ul class="dropdown">
-                                @foreach (range(1, 10) as $option)
-                                    <li value="$option">{{ $option }}</li>
-                                @endforeach
+                                <li value="1">1</li>
                             </ul>
                         </div>
                     </div>
@@ -33,6 +29,8 @@
                 </div>
             </div>
         </div>
+        <script src="assets/js/vue.min.js"></script>
+        <script src="assets/js/vue-resource.min.js"></script>
         <script src="assets/js/app.js"></script>
     </body>
 </html>

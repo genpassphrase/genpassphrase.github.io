@@ -11,15 +11,14 @@ var app = new Vue({
 	},
 	methods: {
 		loadApp: function () {
-			if (this.fetchDictionary())
-			{
+			this.fetchDictionary(function () {
 				this.generatePassphrase();
-			}
+			});
 		},
-		fetchDictionary: function () {
+		fetchDictionary: function (callback) {
 			this.$http.get(this.uriToDictionary).then(response => {
 				this.dictionary = response.body;
-				return true;
+				return callback();
 			});
 		},
 		generatePassphrase: function () {

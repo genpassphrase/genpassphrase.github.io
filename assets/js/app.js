@@ -29,14 +29,14 @@ var app = new Vue({
 			}
 			this.passphrase = passphraseWords.join(this.passphraseSettings.seperator);
 		},
-		selectAndCopyPassphrase: function (el) {
+		selectAndCopyPassphrase: function (event) {
 			var sel, range;
 			if (window.getSelection && document.createRange) { //Browser compatibility
 				sel = window.getSelection();
 				if (sel.toString() == '') { //no text selection
 					window.setTimeout(function(){
 						range = document.createRange(); //range object
-						range.selectNodeContents(el); //sets Range
+						range.selectNodeContents(event.target); //sets Range
 						sel.removeAllRanges(); //remove all ranges from selection
 						sel.addRange(range);//add Range to a Selection.
 						this.copySelectedText();
@@ -46,7 +46,7 @@ var app = new Vue({
 				sel = document.selection.createRange();
 				if (sel.text == '') { //no text selection
 					range = document.body.createTextRange();//Creates TextRange object
-					range.moveToElementText(el);//sets Range
+					range.moveToElementText(event.target);//sets Range
 					range.select(); //make selection.
 					this.copySelectedText();
 				}

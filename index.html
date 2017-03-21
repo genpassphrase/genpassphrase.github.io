@@ -12,13 +12,14 @@
 
                 <h1 class="hedding">Passphrases:</h1>
                 <div class="passphrases">
-                    <div class="passphrase">{{ passphrase }}</div>
+                    <div class="passphrase" v-on:click="selectAndCopyPassphrase(this)">{{ passphrase }}</div>
                 </div>
                 <div class="form">
                     <div class="form-element">
                         <div id="dd" class="wrapper-dropdown-2">
                             <span>Number</span>
                             <ul class="dropdown">
+
                                 <li value="1">1</li>
                             </ul>
                         </div>

@@ -11,8 +11,7 @@ var app = new Vue({
 	},
 	methods: {
 		loadApp: function () {
-			this.fetchDictionary();
-			if (this.dictionary.length > 1)
+			if (this.fetchDictionary())
 			{
 				this.generatePassphrase();
 			}
@@ -20,13 +19,14 @@ var app = new Vue({
 		fetchDictionary: function () {
 			this.$http.get(this.uriToDictionary).then(response => {
 				this.dictionary = response.body;
+				return true;
 			});
 		},
 		generatePassphrase: function () {
 			passphraseWords = [];
-			for (i=0; i < this.passphraseSettings.length; i++)
+			for (i = 0; i < this.passphraseSettings.length; i++)
 			{
-				passphraseWords.push(this.dictionary[Math.floor(Math.random()*this.dictionary.length)]);
+				passphraseWords.push(this.dictionary[Math.floor(Math.random() * this.dictionary.length)]);
 			}
 			this.passphrase = passphraseWords.join(this.passphraseSettings.seperator);
 		}

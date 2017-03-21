@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Generate Passphrase | genpassphra.se</title>
+
+        <link href="http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <h1 class="hedding">Passphrases:</h1>
+                <div class="passphrases">
+                    @foreach($passphrases as $passphrase)
+                        <div class="passphrase" onclick="selectText(this)">{{ $passphrase }}</div>
+                    @endforeach
+                </div>
+                <div class="form">
+                    <div class="form-element">
+                        <div id="dd" class="wrapper-dropdown-2">
+                            <span>Number</span>
+                            <ul class="dropdown">
+                                @foreach (range(1, 10) as $option)
+                                    <li value="$option">{{ $option }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-element">
+                        <button id="getPassphrases">Get New Passphrase</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="assets/js/app.js"></script>
+    </body>
+</html>

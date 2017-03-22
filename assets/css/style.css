@@ -150,3 +150,55 @@ button:focus {
     pointer-events: auto;
 }
 
+/* Notifications */
+
+.notifyjs-corner {
+    position: fixed;
+    margin: 5px;
+    z-index: 1050;
+}
+
+.notifyjs-corner .notifyjs-wrapper,.notifyjs-corner .notifyjs-container {
+    position: relative;
+    display: block;
+    height: inherit;
+    width: inherit;
+    margin: 3px;
+}
+
+.notifyjs-wrapper {
+    z-index: 1;
+    position: absolute;
+    display: inline-block;
+    height: 0;
+    width: 0;
+}
+
+.notifyjs-container {
+    display: none;
+    z-index: 1;
+    position: absolute;
+}
+
+.notifyjs-hidable {
+    cursor: pointer;
+}
+
+[data-notify-text],[data-notify-html] {
+    position: relative;
+}
+
+
+.notifyjs-copied-base {
+    white-space: nowrap;
+    background-color: #34495e;
+    font-weight: 300;
+    border-top-width: 3px;
+    border-top-style: solid;
+    border-top-color: #1abc9c;
+    font-size: 19px;
+    color: #1abc9c;
+    padding: 17px;
+}
+
+

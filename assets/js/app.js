@@ -3,7 +3,7 @@ var app = new Vue({
 	data: {
 		uriToDictionary: 'assets/dictionary/en-gb.json',
 		dictionary: [],
-		passphrases: [],
+		passphrases: [""],
 		passphraseSettings: {
 			length: 5,
 			seperator: ' '
@@ -12,6 +12,10 @@ var app = new Vue({
 			value: 1,
 			placeholder: 'Number',
 			selectionActive: false,
+		},
+		notify: {
+			notifcations: [],
+			autohideTimeout: 5000
 		}
 	},
 	methods: {
@@ -65,7 +69,7 @@ var app = new Vue({
 			var copied = document.execCommand('copy');
 			if (copied)
 			{
-				$.notify("Passphrase Copied!", {style: 'copied'});
+				this.createNotification("Passphrase Copied!");
 			}
 		},
 
@@ -80,6 +84,25 @@ var app = new Vue({
 			setTimeout(function(){
 				app.dropDown.selectionActive = false;
 			}, 1);
+		},
+
+		// Custom Notifcations
+		createNotification: function (text) {
+
+			var notification = `
+				<div class="notifyjs-wrapper notifyjs-hidable">
+					<div class="notifyjs-container">
+						<div class="notifyjs-copied-base notifyjs-copied-error">
+							<span data-notify-text="">` + text +`</span>
+						</div>
+					</div>
+				</div>`;
+
+			this.notify.notifcations.push(notification);
+
+			setTimeout( function() {
+				app.notify.notifcations.pop();
+			}, this.notify.autohideTimeout);
 		}
 	},
 	computed: {

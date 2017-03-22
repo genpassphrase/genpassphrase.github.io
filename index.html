@@ -27,30 +27,12 @@
                     </div>
                 </div>
             </div>
+            <div class="notifyjs-corner" style="top: 0px; right: 0px;">
+                <div v-for="notification in notify.notifcations" v-html="notification"></div>
+            </div>
         </div>
         <script src="assets/js/vue.js"></script>
         <script src="assets/js/vue-resource.min.js"></script>
-        <script src="assets/js/vue-notifications.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="assets/js/notify.min.js"></script>
-        <script>
-            $.notify.addStyle('copied', {
-              html: "<div><span data-notify-text/></div>",
-              classes: {
-                base: {
-                  "white-space": "nowrap",
-                  "background-color": "#34495e",
-                  "font-weight": "300",
-                  "border-top-width": "3px",
-                  "border-top-style": "solid",
-                  "border-top-color": "#1abc9c",
-                  "font-size": "19px",
-                  "color": "#1abc9c",
-                  "padding": "17px"
-                }
-              }
-            });
-        </script>
         <script src="assets/js/app.js"></script>
     </body>
 </html>

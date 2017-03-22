@@ -9,5 +9,6 @@ assets/js/app.js
 assets/js/vue.min.js
 assets/js/vue.dev.js
 assets/js/vue-resource.min.js
+assets/dictionary/en-gb.json
 https://fonts.googleapis.com/css?family=Open+Sans
 https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext

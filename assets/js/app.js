@@ -7,6 +7,10 @@ var app = new Vue({
 		passphraseSettings: {
 			length: 5,
 			seperator: ' '
+		},
+		dropDown: {
+			value: '',
+			selectionActive: false,
 		}
 	},
 	methods: {
@@ -54,6 +58,15 @@ var app = new Vue({
 		},
 		copySelectedText: function () {
 			var copied = document.execCommand('copy');
+		},
+
+		// DropDown Box
+		dropDownActivate: function (event) {
+			this.dropDown.selectionActive = true;
+		},
+		dropDownSelection: function (event) {
+			this.drobDown.value = event.target.getTag;
+			this.dropDown.selectionActive = false;
 		}
 	}
 });

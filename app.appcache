@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 2017-03-22:v1
+# 2017-03-22:v2
 
 # Explicitly cached 'master entries'.
 CACHE:
@@ -10,5 +10,8 @@ assets/js/vue.min.js
 assets/js/vue.dev.js
 assets/js/vue-resource.min.js
 assets/dictionary/en-gb.json
-https://fonts.googleapis.com/css?family=Open+Sans
-https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext
+https://fonts.googleapis.com/css?family=Open+Sans|Lato&subset=latin,latin-ext
+
+# Resources that require the user to be online.
+NETWORK:
+*

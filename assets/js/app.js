@@ -32,12 +32,15 @@ var app = new Vue({
 		},
 		generatePassphrase: function () {
 			this.passphrases = [];
+			var word = '';
 			for (i = 0; i < this.dropDown.value; i++)
 			{
 				passphraseWords = [];
 				for (ii = 0; ii < this.passphraseSettings.length; ii++)
 				{
-					passphraseWords.push(this.dictionary[Math.floor(Math.random() * this.dictionary.length)]);
+					word = this.dictionary[Math.floor(Math.random() * this.dictionary.length)];
+					word = word.charAt(0).toUpperCase() + word.slice(1);
+					passphraseWords.push(word);
 				}
 				this.passphrases.push(passphraseWords.join(this.passphraseSettings.seperator));
 			}

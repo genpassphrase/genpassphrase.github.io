@@ -7,4 +7,6 @@ index.html
 assets/css/style.css
 assets/js/vue.min.js
 assets/js/vue.dev.js
-assets/js/vue-resources.min.js
+assets/js/vue-resource.min.js
+https://fonts.googleapis.com/css?family=Open+Sans
+https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext

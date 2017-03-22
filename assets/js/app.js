@@ -3,13 +3,13 @@ var app = new Vue({
 	data: {
 		uriToDictionary: 'assets/dictionary/en-gb.json',
 		dictionary: [],
-		passphrase: '',
+		passphrases: [],
 		passphraseSettings: {
 			length: 5,
 			seperator: ' '
 		},
 		dropDown: {
-			value: '',
+			value: 1,
 			placeholder: 'Number',
 			selectionActive: false,
 		}
@@ -27,12 +27,16 @@ var app = new Vue({
 			});
 		},
 		generatePassphrase: function () {
-			passphraseWords = [];
-			for (i = 0; i < this.passphraseSettings.length; i++)
+			this.passphrases = [];
+			for (i = 0; i > this.dropDown.value; i)
 			{
-				passphraseWords.push(this.dictionary[Math.floor(Math.random() * this.dictionary.length)]);
+				passphraseWords = [];
+				for (ii = 0; ii < this.passphraseSettings.length; ii++)
+				{
+					passphraseWords.push(this.dictionary[Math.floor(Math.random() * this.dictionary.length)]);
+				}
+				this.passphrases.push(passphraseWords.join(this.passphraseSettings.seperator));
 			}
-			this.passphrase = passphraseWords.join(this.passphraseSettings.seperator);
 		},
 		selectAndCopyPassphrase: function (event) {
 			var sel, range;
@@ -64,14 +68,18 @@ var app = new Vue({
 		// DropDown Box
 		dropDownActivate: function (event) {
 			this.dropDown.selectionActive = true;
+			return false;
 		},
 		dropDownSelection: function (event) {
-			this.dropDown.selectionActive = false;
 			this.dropDown.placeholder = 'Number - ' + event.target.innerText;
 			this.dropDown.value = event.target.innerText;
+			setTimeout(function(){
+				app.dropDown.selectionActive = false;
+			}, 1);
 		}
 	},
 	computed: {
+		// DropDown Box
 		dropDownCSS: function () {
 			return {
 				'active' : this.dropDown.selectionActive

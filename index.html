@@ -15,10 +15,10 @@
                 </div>
                 <div class="form">
                     <div class="form-element">
-                        <div id="dd" class="wrapper-dropdown-2" @click="dropDownActivate">
-                            <span>Number</span>
+                        <div class="wrapper-dropdown-2" v-bind:class="dropDownCSS" @click="dropDownActivate">
+                            <span>{{ dropDown.placeholder }}</span>
                             <ul class="dropdown">
-                                <li v-for="n in 10" @click="dropDownSelection" value="{{ n }}">{{ n }}</li>
+                                <li v-for="n in 10" v-bind:style="dropDownOptionsCSS" @click="dropDownSelection">{{ n }}</li>
                             </ul>
                         </div>
                     </div>

@@ -10,6 +10,7 @@ var app = new Vue({
 		},
 		dropDown: {
 			value: '',
+			placeholder: 'Number',
 			selectionActive: false,
 		}
 	},
@@ -65,8 +66,21 @@ var app = new Vue({
 			this.dropDown.selectionActive = true;
 		},
 		dropDownSelection: function (event) {
-			this.drobDown.value = event.target.getTag;
 			this.dropDown.selectionActive = false;
+			this.dropDown.placeholder = 'Number - ' + event.target.innerText;
+			this.dropDown.value = event.target.innerText;
+		}
+	},
+	computed: {
+		dropDownCSS: function () {
+			return {
+				'active' : this.dropDown.selectionActive
+			}
+		},
+		dropDownOptionsCSS: function () {
+			return {
+				'display' : (this.dropDown.selectionActive ? 'block' : 'none')
+			}
 		}
 	}
 });

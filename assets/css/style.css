@@ -114,7 +114,7 @@ button:focus {
 }
 
 .wrapper-dropdown-2 .dropdown {
-    /* Size & position */
+  /* Size & position */
     position: absolute;
     top: 100%;
     left: -5px;
@@ -143,6 +143,8 @@ button:focus {
 
 
 /* Hover state */
+
+
 .wrapper-dropdown-2.active:after {
     border-width: 0 6px 6px 6px;
 }
@@ -151,3 +153,4 @@ button:focus {
     opacity: 1;
     pointer-events: auto;
 }
+

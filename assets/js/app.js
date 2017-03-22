@@ -88,7 +88,7 @@ var app = new Vue({
 
 		// Custom Notifcations
 		createNotification: function (text) {
-
+			var key = this.notify.notifcations.length;
 			var notification = `
 				<div class="notifyjs-wrapper notifyjs-hidable">
 					<div class="notifyjs-container">
@@ -98,7 +98,7 @@ var app = new Vue({
 					</div>
 				</div>`;
 
-			this.notify.notifcations.push(notification);
+			this.notify.notifcations.push({key: key, notification: notification});
 
 			setTimeout( function() {
 				app.notify.notifcations.pop();

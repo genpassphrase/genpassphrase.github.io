@@ -28,7 +28,9 @@
                 </div>
             </div>
             <div class="notifyjs-corner" style="top: 0px; right: 0px;">
-                <div v-for="notification in notify.notifcations" v-html="notification"></div>
+                <transition-group name="fade">
+                    <div v-for="notification in notify.notifcations" :key="notification.key" v-html="notification.notification"></div>
+                </transition-group>
             </div>
         </div>
         <script src="assets/js/vue.js"></script>

@@ -188,7 +188,6 @@ button:focus {
     position: relative;
 }
 
-
 .notifyjs-copied-base {
     white-space: nowrap;
     background-color: #34495e;
@@ -199,6 +198,13 @@ button:focus {
     font-size: 19px;
     color: #1abc9c;
     padding: 17px;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0
 }
 
 

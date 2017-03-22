@@ -3,7 +3,7 @@ var app = new Vue({
 	data: {
 		uriToDictionary: 'assets/dictionary/en-gb.json',
 		dictionary: [],
-		passphrases: [""],
+		passphrases: [''],
 		passphraseSettings: {
 			length: 5,
 			seperator: ' '

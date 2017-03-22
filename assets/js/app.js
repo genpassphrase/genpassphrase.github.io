@@ -28,7 +28,7 @@ var app = new Vue({
 		},
 		generatePassphrase: function () {
 			this.passphrases = [];
-			for (i = 0; i > this.dropDown.value; i++)
+			for (i = 0; i < this.dropDown.value; i++)
 			{
 				passphraseWords = [];
 				for (ii = 0; ii < this.passphraseSettings.length; ii++)

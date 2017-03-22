@@ -34,7 +34,7 @@ var app = new Vue({
 			if (window.getSelection && document.createRange) { //Browser compatibility
 				sel = window.getSelection();
 				if (sel.toString() == '') { //no text selection
-					window.setTimeout(function(){
+					window.setTimeout(function (this) {
 						range = document.createRange(); //range object
 						range.selectNodeContents(event.target); //sets Range
 						sel.removeAllRanges(); //remove all ranges from selection

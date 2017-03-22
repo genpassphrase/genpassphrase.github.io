@@ -34,12 +34,12 @@ var app = new Vue({
 			if (window.getSelection && document.createRange) { //Browser compatibility
 				sel = window.getSelection();
 				if (sel.toString() == '') { //no text selection
-					window.setTimeout(function (this) {
+					window.setTimeout(function () {
 						range = document.createRange(); //range object
 						range.selectNodeContents(event.target); //sets Range
 						sel.removeAllRanges(); //remove all ranges from selection
 						sel.addRange(range);//add Range to a Selection.
-						this.copySelectedText();
+						app.copySelectedText();
 					},1);
 				}
 			} else if (document.selection) { //older ie
@@ -48,7 +48,7 @@ var app = new Vue({
 					range = document.body.createTextRange();//Creates TextRange object
 					range.moveToElementText(event.target);//sets Range
 					range.select(); //make selection.
-					this.copySelectedText();
+					app.copySelectedText();
 				}
 			}
 		},

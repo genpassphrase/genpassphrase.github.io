@@ -5,6 +5,7 @@ var app = new Vue({
 		dictionary: [],
 		passphrases: [''],
 		passphraseSettings: {
+			maxPassphraseNumber: 10,
 			length: 5,
 			seperator: ' '
 		},
@@ -31,7 +32,7 @@ var app = new Vue({
 			});
 		},
 		generatePassphrase: function () {
-			this.passphrases = [];
+			this.passphrases = [''];
 			var word = '';
 			for (i = 0; i < this.dropDown.value; i++)
 			{

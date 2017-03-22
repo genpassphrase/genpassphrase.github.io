@@ -2,8 +2,8 @@
 <html manifest="app.appcache">
     <head>
         <title>Generate Passphrase | genpassphra.se</title>
-        <link href="//fonts.googleapis.com/css?family=Open+Sans|Lato&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-        <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+        <link href="//fonts.googleapis.com/css?family=Open+Sans|Lato&subset=latin,latin-ext" rel="stylesheet" type="text/css"/>
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <div class="container" id="app">
@@ -17,7 +17,7 @@
                         <div class="wrapper-dropdown-2" v-bind:class="dropDownCSS" @click="dropDownActivate">
                             <span>{{ dropDown.placeholder }}</span>
                             <ul class="dropdown">
-                                <li v-for="n in 10" v-bind:style="dropDownOptionsCSS" @click="dropDownSelection">{{ n }}</li>
+                                <li v-for="n in passphraseSettings.maxPassphraseNumber" v-bind:style="dropDownOptionsCSS" @click="dropDownSelection">{{ n }}</li>
                             </ul>
                         </div>
                     </div>

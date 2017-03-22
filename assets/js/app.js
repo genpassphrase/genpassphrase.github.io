@@ -63,6 +63,10 @@ var app = new Vue({
 		},
 		copySelectedText: function () {
 			var copied = document.execCommand('copy');
+			if (copied)
+			{
+				$.notify("Passphrase Copied!", {style: 'copied'});
+			}
 		},
 
 		// DropDown Box
